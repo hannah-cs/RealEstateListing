@@ -1,5 +1,6 @@
-package com.example.RealEstateListing;
+package com.example.RealEstateListing.Model;
 
+import com.example.RealEstateListing.Model.Realtor;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

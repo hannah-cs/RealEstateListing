@@ -1,4 +1,4 @@
-package com.example.RealEstateListing;
+package com.example.RealEstateListing.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;

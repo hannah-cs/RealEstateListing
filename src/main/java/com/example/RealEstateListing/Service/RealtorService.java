@@ -1,4 +1,6 @@
-package com.example.RealEstateListing;
+package com.example.RealEstateListing.Service;
+
+import com.example.RealEstateListing.Model.Realtor;
 
 import java.util.List;
 

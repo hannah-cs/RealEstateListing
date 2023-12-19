@@ -1,11 +1,14 @@
-package com.example.RealEstateListing;
+package com.example.RealEstateListing.Service;
+
+import com.example.RealEstateListing.Model.Property;
+import com.example.RealEstateListing.Model.Realtor;
 
 import java.util.List;
 
 public interface PropertyService {
-    void addProperty(Property property);
-    void updateProperty(Property property);
-    void deleteProperty(Property property);
+    boolean addProperty(Property property);
+    boolean updateProperty(Property property);
+    boolean deleteProperty(int id);
     List<Property> getAllProperties();
     List<Property> getPropertiesByRealtor(Realtor realtor);
     List<Property> getPropertiesByType(String type);

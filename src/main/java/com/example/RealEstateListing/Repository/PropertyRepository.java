@@ -1,5 +1,6 @@
-package com.example.RealEstateListing;
+package com.example.RealEstateListing.Repository;
 
+import com.example.RealEstateListing.Model.Property;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
