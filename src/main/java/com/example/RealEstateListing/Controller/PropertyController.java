@@ -126,7 +126,7 @@ public class PropertyController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteProperty@PathVariable int id) {
+    public ResponseEntity<Void> deleteProperty(@PathVariable int id) {
         boolean success = propertyService.deleteProperty(id);
         if (success) {
             return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).build();

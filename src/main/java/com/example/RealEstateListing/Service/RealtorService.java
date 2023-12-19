@@ -5,9 +5,9 @@ import com.example.RealEstateListing.Model.Realtor;
 import java.util.List;
 
 public interface RealtorService {
-    void addRealtor(Realtor realtor);
-    void updateRealtor(Realtor realtor);
-    void deleteRealtor(Realtor realtor);
+    boolean addRealtor(Realtor realtor);
+    boolean updateRealtor(Realtor realtor);
+    boolean deleteRealtor(int id);
     List<Realtor> getAllRealtors();
     List<Realtor> getRealtorByName(String name);
     List<Realtor> getRealtorByEmail(String email);
