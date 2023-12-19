@@ -15,12 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/realtors")
 public class RealtorController {
-    private RealtorService realtorService;
 
     @Autowired
-    public RealtorController(RealtorService realtorService){
-        this.realtorService = realtorService;
-    }
+    private RealtorService realtorService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Realtor>> getAllRealtors() {

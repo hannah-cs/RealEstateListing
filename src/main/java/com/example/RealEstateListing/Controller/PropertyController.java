@@ -14,12 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/properties")
 public class PropertyController {
-    private PropertyService propertyService;
-
     @Autowired
-    public PropertyController(PropertyService propertyService){
-        this.propertyService = propertyService;
-    }
+    private PropertyService propertyService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getAllProperties() {
@@ -59,31 +55,31 @@ public class PropertyController {
 
     @GetMapping(value = "/bedrooms", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getPropertiesByBedrooms(@PathVariable int bedrooms) {
-        List<Property> properties = propertyService.getPropertiesByBedroomExact(bedrooms);
+        List<Property> properties = propertyService.getPropertiesByBedrooms(bedrooms);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }
 
     @GetMapping(value = "/bedroomsfrom", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getPropertiesByBedroomsGT(@PathVariable int bedrooms) {
-        List<Property> properties = propertyService.getPropertiesByBedroomGreaterThanEqual(bedrooms);
+        List<Property> properties = propertyService.getPropertiesByBedroomGreaterThanOrEqual(bedrooms);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }
 
     @GetMapping(value = "/bathrooms", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getPropertiesByBathrooms(@PathVariable int bathrooms) {
-        List<Property> properties = propertyService.getPropertiesByBathroomExact(bathrooms);
+        List<Property> properties = propertyService.getPropertiesByBathrooms(bathrooms);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }
 
     @GetMapping(value = "/bathroomsfrom", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getPropertiesByBathroomsGT(@PathVariable int bathrooms) {
-        List<Property> properties = propertyService.getPropertiesByBathroomGreaterThanEqual(bathrooms);
+        List<Property> properties = propertyService.getPropertiesByBathroomGreaterThanOrEqual(bathrooms);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }
 
     @GetMapping(value = "/pricefrom", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Property>> getPropertiesByPriceGT(@PathVariable Double price) {
-        List<Property> properties = propertyService.getPropertiesByPriceGreatherThanEqual(price);
+        List<Property> properties = propertyService.getPropertiesByPriceGreaterThanEqual(price);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }
 
@@ -100,7 +96,7 @@ public class PropertyController {
     }
 
     @GetMapping(value = "/listedbefore", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Property>> getPropertiesByPriceLT(@PathVariable long date) {
+    public ResponseEntity<List<Property>> getPropertiesBeforeDate(@PathVariable long date) {
         List<Property> properties = propertyService.getPropertiesListedBefore(date);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(properties);
     }

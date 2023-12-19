@@ -1,9 +1,13 @@
 package com.example.RealEstateListing.Service;
 
 import com.example.RealEstateListing.Model.Realtor;
+import jakarta.persistence.Entity;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface RealtorService {
     boolean addRealtor(Realtor realtor);
     boolean updateRealtor(Realtor realtor);
